@@ -1,0 +1,26 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+    <h1>Add Job</h1>
+    <div class="alert alert-primary" role="alert">
+        {{ responseMessage }}
+    </div>
+
+    <form action="../jobs/add" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="">Title</label>
+            <input type="text" class="form-control" name="title">
+        </div>
+        
+        <div class="form-group">
+            <label for="">Description</label>
+            <input type="text" class="form-control" name="description"><br>
+        </div>
+        
+        <div class="form-group">
+            <input type="file" class="btn btn-success" name="logo">
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+        
+    </form>
+{% endblock %}

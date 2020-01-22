@@ -1,0 +1,98 @@
+body{
+    background-color: #2C3F63;
+    margin: 0;
+    padding: 0;
+}
+.hero-cover{
+    margin: 0 auto;
+    width: 60%;
+    background-image: url('../images/fondo_pagina.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.header{
+    text-align: center;
+}
+.header-title{
+    color: #fff;
+}
+.contact{
+    display: flex;
+    justify-content: center;
+}
+.contact-container{
+    margin: 0 auto;
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255,255,255,.5);
+    border-radius: 10px;
+}
+
+.contact-info h3{
+    text-align: center;
+}
+.contact-info p{
+    text-align: left;
+}
+
+.download{
+    padding: 15px 0;
+}
+.download-container{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 80%;
+}
+.footer{
+    background-color: #e93f36;
+    padding: 15px 0;
+    
+    width: 100%;
+}
+.footer-container{
+    display: flex;
+    justify-content: space-around;
+}
+.footer a{
+    color: #fff;
+    text-decoration: none;
+}
+@media screen and (max-width: 460px){
+    .hero-cover{
+        height: 20vh;
+    }
+    .contact-info{
+        padding: 0 10px;
+    }
+    .contact-info p{
+        text-align: center;
+    }
+    .footer-container{
+        padding: 0 30px;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .footer a{
+        margin-bottom: 10px;;
+    }
+}
+.login{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login .login-box{
+    background-color: rgba(255,255,255,.2);
+    border-radius: 8px;
+    padding: 25px;
+}
+
+.login img{
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+}
