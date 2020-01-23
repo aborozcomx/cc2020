@@ -31,7 +31,7 @@ class UsersController extends Controller
     
     public function postSaveUser(Request $request){
         $responseMessage = null;
-        
+        $estados = DB::table('estados')->get();
         $userValidator = v::key('nombre', v::stringType()->notEmpty())
                   ->key('apellido', v::stringType()->notEmpty())
                   ->key('email', v::email()->notEmpty())
@@ -94,7 +94,7 @@ class UsersController extends Controller
                         </p>
                         <p>Estos son tus datos de acceso: <br>
                             Email: '.$user->email.'<br>
-                            Contraseña: '.$request->input['password'].'
+                            Contraseña: '.$request->input('password').'
                         </p>
                     ';
                     // Content
@@ -115,7 +115,7 @@ class UsersController extends Controller
                 } catch (Exception $e) {
                     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
                 }
-                var_dump($user);
+               
             }
             
             
@@ -131,6 +131,7 @@ class UsersController extends Controller
             'user' => $user,
             'success' => $success,
             'responseMessage' => $responseMessage,
+            'estados' => $estados,
         ]);
     }
 }

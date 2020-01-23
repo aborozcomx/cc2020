@@ -25,12 +25,19 @@
             if($user){
                 if(password_verify($input['password'],$user->password)){
                     $_SESSION['userId'] = $user->id;
-                    return redirect('/ccadmin');
+                    $_SESSION['admin'] = $user->es_admin;
+
+                    $team = DB::table('teams')->where('id_usuario', $user->id)->first();
+                    if($user->es_admin){
+                        return redirect('/ccadmin');
+                    }
+
+                    return redirect("/ccadmin/equipos/$team->id");
                 }else{
-                    $responseMessage = 'Contraseña Incorrecta';
+                    $responseMessage = 'Datos Incorrectos';
                 }
             }else{
-                $responseMessage = 'Correo incorrecto';
+                $responseMessage = 'Datos Incorrectos';
                 
             }
 

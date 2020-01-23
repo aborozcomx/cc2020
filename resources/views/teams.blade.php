@@ -34,13 +34,19 @@
 			    </tr>
 			  </thead>
 			  <tbody>
+				@php
+					$i = 1;	
+				@endphp
 			    @foreach ($teams as $team)
 			    		@if($team->nombre)
 				    		<tr>
-					      <th scope="row">{{ $loop->index }}</th>
+					      <th scope="row">{{ $i }}</th>
 					      <td>{{$team->nombre}}</td>
 					    </tr>
 					@endif
+					@php
+						$i += 1;
+					@endphp
 			    @endforeach
 			  </tbody>
 			</table>
